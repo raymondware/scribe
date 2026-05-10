@@ -1,0 +1,20 @@
+{
+  "name": "scribe",
+  "version": "1.0.0",
+  "description": "Multi-agent writing harness that catches AI-isms before they ship. For book writers, essayists, and longform authors who care about voice.",
+  "author": {
+    "name": "raymondware"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/raymondware/scribe",
+  "repository": "https://github.com/raymondware/scribe",
+  "keywords": [
+    "writing",
+    "books",
+    "ai-isms",
+    "voice",
+    "anti-pattern",
+    "multi-agent",
+    "longform"
+  ]
+}
