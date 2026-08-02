@@ -8,7 +8,7 @@ Built for longform authors, essayists, ghostwriters, and editors. Runs a team of
 
 ## The Problem
 
-AI-generated writing converges on the same cadence. "Delve into the tapestry of." "It's important to note that." "Not just X, but Y." Em-dashes everywhere. Three-word lists. Conclusion paragraphs that restate the previous five. Hedging openers.
+AI-generated writing converges on the same cadence. "Delve into the tapestry of." "It's important to note that." "Not just X, but Y." "This is not X. It is Y." Em-dashes everywhere. Three-word lists. Conclusion paragraphs that restate the previous five. Hedging openers.
 
 Scribe fixes this with persona-first generation and a sameness score that quantifies how close prose is to the AI default.
 
@@ -95,7 +95,7 @@ Scribe ships with anti-patterns across three files:
 
 | File | Patterns |
 |---|---|
-| `anti-patterns/language.md` | Delve/tapestry/realm vocabulary, tricolon reflex, hedge stacking, marketing verbs, em-dash overuse, self-descriptors, filler intensifiers |
+| `anti-patterns/language.md` | Delve/tapestry/realm vocabulary, tricolon reflex, hedge stacking, marketing verbs, em-dash overuse, self-descriptors, negative/positive restatement, filler intensifiers |
 | `anti-patterns/rhetoric.md` | Universal aphorisms, "not just X but Y" frames, throat-clearing openers, flashlight-hedging adjectives |
 | `anti-patterns/structure.md` | Conclusion-restating, predictable section sequence, thesis-delay syndrome |
 

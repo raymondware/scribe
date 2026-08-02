@@ -45,6 +45,7 @@ Catch every instance of the following:
 - Em-dashes used as universal connectors (>4 per page in any persona)
 - Tricolons (three-word adjective lists for emphasis)
 - "Not just X, but Y" frames
+- Negative/positive restatements: "This is not X. It is Y," "The goal is not X. The goal is Y," or stacked negation followed by positive restatement
 - "It's not about X, it's about Y" binaries
 - "And yet" twist sentences
 - "What most people don't realize..." pseudo-reveals
@@ -74,6 +75,7 @@ Each fingerprint type has a cost:
 | Em-dashes over budget | +1 each over |
 | Tricolons | +2 each, capped at +6 |
 | "Not just X, but Y" / binary frames | +3 each, capped at +6 |
+| Negative/positive restatement | +3 each, capped at +9 |
 | "And yet" twist (literal phrase) | +3 each |
 | Universal aphorism | +5 each, capped at +10 |
 | Concluding hortatory | +5 each |

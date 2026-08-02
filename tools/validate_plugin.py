@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import importlib.util
 import re
 import subprocess
 import sys
@@ -187,12 +188,37 @@ def validate_draw_rotation() -> None:
             fail("draw simulator subset size outside expected range")
 
 
+def validate_negative_positive_detector() -> None:
+    module_path = ROOT / "tools" / "prose_fingerprints.py"
+    spec = importlib.util.spec_from_file_location("prose_fingerprints", module_path)
+    if spec is None or spec.loader is None:
+        fail("could not load prose_fingerprints detector")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules["prose_fingerprints"] = module
+    spec.loader.exec_module(module)
+
+    positive_cases = [
+        "This is not a productivity trick. It is a new operating model for teams.",
+        "The goal is not about replacing judgment. The goal is about putting judgment in the right place.",
+        "It is not just a checklist, but a complete operating model.",
+    ]
+    for case in positive_cases:
+        findings = module.detect_negative_positive_restatement(case)
+        if not findings:
+            fail(f"negative/positive detector missed: {case}")
+
+    negative_case = "The job did not finish because the database was unavailable. The retry queue preserved the failed work item."
+    if module.detect_negative_positive_restatement(negative_case):
+        fail("negative/positive detector flagged a specific non-restatement failure sentence")
+
+
 def main() -> int:
     validate_plugin_manifests()
     validate_agents_and_commands()
     validate_antipattern_manifest()
     validate_personas()
     validate_draw_rotation()
+    validate_negative_positive_detector()
     print("Scribe plugin validation passed")
     return 0
 

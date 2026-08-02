@@ -45,6 +45,7 @@ SIGNAL_PATTERN_IDS = {
     "marketing-verb",
     "em-dash-connector",
     "self-descriptor",
+    "negative-positive-restatement",
 }
 
 CATEGORY_DIVERSITY_MIN = (
@@ -178,13 +179,13 @@ def must_include_set(patterns: list[Pattern], inputs: Inputs) -> list[str]:
     if inputs.persona == "literary-fiction":
         forced += take("tricolon-reflex", "em-dash-connector")
     elif inputs.persona == "popular-nonfiction":
-        forced += take("hedge-stacking", "filler-openers", "universal-aphorism")
+        forced += take("hedge-stacking", "negative-positive-restatement", "universal-aphorism")
     elif inputs.persona == "technical-writing":
-        forced += take("hedge-stacking", "marketing-verb", "filler-openers")
+        forced += take("hedge-stacking", "marketing-verb", "negative-positive-restatement")
     elif inputs.persona == "memoir":
         forced += take("tricolon-reflex", "self-descriptor", "universal-aphorism")
     elif inputs.persona == "business-book":
-        forced += take("marketing-verb", "hedge-stacking", "filler-openers")
+        forced += take("marketing-verb", "hedge-stacking", "negative-positive-restatement")
 
     seen: set[str] = set()
     deduped: list[str] = []

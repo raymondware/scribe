@@ -3,7 +3,7 @@ file: anti-patterns/language.md
 tags: [vocabulary, ai-isms, register, idiom, hedging]
 affects: all
 severity_default: high
-pattern_count: 12
+pattern_count: 13
 ---
 
 # Language Anti-Patterns
@@ -176,6 +176,33 @@ _Tags: rhythm, rhetoric · Affects: all · Severity: high_
 **Why it fails**: It's a movie-trailer rhythm. Every clause becomes a setup for an upgrade reveal. The reader stops trusting the upgrades.
 
 **Fix**: Convert to direct claim. "It's a roadmap" or "It's a book that works as a roadmap." Skip the negation that just sets up the affirmation.
+
+---
+
+## Negative/Positive Restatement
+_Tags: ai-isms, rhetoric, restatement · Affects: all · Severity: high_
+
+**What it is**: A broader cousin of the "not just X" reflex. The sentence negates a weak version of the claim, then immediately states the preferred positive version. Common forms include "This is not X. It is Y," "This is not about X. It is about Y," "Not X. Y," and stacked variants that repeat the move across a paragraph.
+
+**Why it fails**: The negated half is usually a straw frame the reader did not need. AI prose uses the pattern to create fake decisiveness. The result sounds polished but padded: first it says what the thing is not, then it says what it meant to say.
+
+**Fix**: State the positive claim once. Keep the negative half only when the reader probably believes the false version and the contrast is specific.
+
+```
+// AI restatement
+This is not a productivity trick. It is a new operating model for teams.
+
+// Direct claim
+It changes how teams decide what work counts as finished.
+```
+
+```
+// AI restatement
+The goal is not to replace judgment. The goal is to put judgment in the right place.
+
+// Direct claim
+Put judgment where it belongs: use the model for context-sensitive choices and use policy for boundaries that must not drift.
+```
 
 ---
 
