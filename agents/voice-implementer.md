@@ -27,6 +27,7 @@ Scan for any phrase from the persona's "Forbidden Openers" list — replace.
 Scan for any vocabulary on the banned list (delve, tapestry, navigate-as-metaphor, etc.) — replace with concrete alternative.
 Scan for "It's worth noting that," "It's important to," "In a world where," "many people," "we all," etc. — cut.
 Scan for tricolons — replace with two-item or four-item lists.
+Scan for negative/positive restatement ("This is not X. It is Y," "The goal is not X. The goal is Y"): state the positive claim directly unless the contrast is necessary.
 Scan for "and yet" twists — restructure or cut the literal phrase.
 Scan for marketing verbs (unlock, leverage, transform, robust, powerful) — replace.
 

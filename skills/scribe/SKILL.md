@@ -1,7 +1,7 @@
 ---
 name: scribe
 version: 1.0.0
-description: Multi-agent writing harness for longform authors. Catches AI-default writing patterns (delve, tapestry, em-dash overuse, hedging openers, three-word lists, conclusion-restating) before they ship. Five writer personas (literary fiction, popular nonfiction, technical writing, memoir, business book), persona-specific rhythm and voice rules, anti-pattern rotation per run with audit log, multi-critic synthesis. Built for authors, essayists, ghostwriters, and editors.
+description: Multi-agent writing harness for longform authors. Catches AI-default writing patterns (delve, tapestry, em-dash overuse, hedging openers, three-word lists, negative/positive restatement, conclusion-restating) before they ship. Five writer personas (literary fiction, popular nonfiction, technical writing, memoir, business book), persona-specific rhythm and voice rules, anti-pattern rotation per run with audit log, multi-critic synthesis. Built for authors, essayists, ghostwriters, and editors.
 ---
 
 # Scribe v1.0.0
@@ -134,12 +134,12 @@ The pool is grouped into three base files plus a research-sourced directory:
 
 | File | Patterns |
 |---|---|
-| `${CLAUDE_PLUGIN_ROOT}/anti-patterns/language.md` | Delve / tapestry, tricolons, hedge stacking, em-dash universal connector, marketing verb, self-descriptor, universal aphorism, "not just X but Y" frames, filler intensifiers |
+| `${CLAUDE_PLUGIN_ROOT}/anti-patterns/language.md` | Delve / tapestry, tricolons, hedge stacking, em-dash universal connector, marketing verb, self-descriptor, universal aphorism, "not just X but Y" frames, negative/positive restatement, filler intensifiers |
 | `${CLAUDE_PLUGIN_ROOT}/anti-patterns/structure.md` | Uniform paragraph length, chapter-recap opening, chapter-end summary, forward references, three-part skeleton, predictable section sequence, bullet-list body, three-anecdote montage, false-question subhead, conclusion-restating-conclusion |
 | `${CLAUDE_PLUGIN_ROOT}/anti-patterns/rhetoric.md` | "In today's fast-paced world" opener, universalizing claims, false dichotomies, rhetorical question reflex, aphorism section closers, "what most don't realize" pseudo-reveal, "and yet" twist, concluding hortatory |
 | `${CLAUDE_PLUGIN_ROOT}/anti-patterns/sourced-from-research/` | Filed by the research-scout agent. Each pattern requires 2+ independent complaints. |
 
-Total at v0.1: 30 anti-patterns. Will grow through ralph-loop iterations and `/scribe:research` runs.
+Total at v1.0: 31 anti-patterns. Will grow through ralph-loop iterations and `/scribe:research` runs.
 
 ## Sameness Score
 

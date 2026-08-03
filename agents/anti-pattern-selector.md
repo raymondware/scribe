@@ -46,8 +46,8 @@ Build `must_include` — patterns whose `personas` or `site_signals` strongly ma
 |---|---|
 | `surface` is `chapter` or `essay` | At least 2 from: `chapter-recap-opening`, `chapter-end-summary`, `forward-reference`, `predictable-section-sequence`, `conclusion-restating-conclusion` |
 | `surface` is `opening` | `in-todays-fast-paced-world`, `delve-tapestry-realm`, `universalizing-we-many-people` |
-| `surface` is `conclusion` | `concluding-hortatory`, `aphorism-section-closer`, `conclusion-restating-conclusion` |
-| `persona` is `business-book` | At least 2 from: `marketing-verb`, `not-x-but-y-frame`, `three-anecdote-montage`, `chapter-end-summary`, `concluding-hortatory` |
+| `surface` is `conclusion` | `concluding-hortatory`, `aphorism-section-closer`, `conclusion-restating-conclusion`, `negative-positive-restatement` |
+| `persona` is `business-book` | At least 2 from: `marketing-verb`, `not-x-but-y-frame`, `negative-positive-restatement`, `three-anecdote-montage`, `chapter-end-summary`, `concluding-hortatory` |
 | `persona` is `memoir` | `universal-aphorism`, `flashlight-hedging-adjectives`, `aphorism-section-closer` |
 | `persona` is `technical-writing` | `marketing-verb`, `self-descriptor`, `bullet-list-body` |
 | `persona` is `literary-fiction` | `tricolon-reflex`, `em-dash-universal-connector` |

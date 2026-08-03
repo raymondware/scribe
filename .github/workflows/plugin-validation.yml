@@ -21,3 +21,6 @@ jobs:
 
       - name: Validate plugin manifests and draw rotation
         run: python3 tools/validate_plugin.py
+
+      - name: Run prose fingerprint tests
+        run: python3 -m unittest discover -s tests

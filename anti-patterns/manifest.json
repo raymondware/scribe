@@ -27,7 +27,8 @@
     "universalizing",
     "false-dichotomy",
     "tricolon",
-    "dialogue"
+    "dialogue",
+    "restatement"
   ],
   "patterns": [
     {
@@ -139,6 +140,17 @@
       "anchor": "not-just-x-but-also-y-reflex",
       "personas": ["all"],
       "site_signals": ["any"]
+    },
+    {
+      "id": "negative-positive-restatement",
+      "title": "Negative/Positive Restatement",
+      "categories": ["ai-isms", "rhetoric", "restatement"],
+      "tags": ["not-x-then-y", "padded-contrast", "ai-default"],
+      "severity_default": "high",
+      "source_file": "anti-patterns/language.md",
+      "anchor": "negativepositive-restatement",
+      "personas": ["all"],
+      "site_signals": ["any", "chapter", "essay", "conclusion"]
     },
     {
       "id": "flashlight-hedging-adjectives",
