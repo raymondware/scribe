@@ -110,8 +110,8 @@ Scribe ships with anti-patterns across three files:
 ### Critics (parallel ensemble)
 `rhythm-critic` `voice-critic` `cliche-detector` `ai-ism-critic` `pacing-critic`
 
-### Orchestration (Opus)
-`conductor` `anti-pattern-selector` `critique-synthesizer`
+### Orchestration
+`conductor` `critique-synthesizer` (Opus), `anti-pattern-selector` (Sonnet)
 
 ## Contributing
 
