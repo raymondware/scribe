@@ -10,6 +10,7 @@ The conductor enforces these gates between phases. Failing a gate either aborts 
 - The subset contains at least 2 patterns of severity `critical` (`delve-tapestry-realm`, `uniform-paragraph-length`, `chapter-end-summary`, `in-todays-fast-paced-world`, `conclusion-restating-conclusion`)
 - The subset spans at least 2 of the 3 base source files (`language.md`, `structure.md`, `rhetoric.md`)
 - The subset does NOT match the previous run's subset
+- The subset contains every manifest pattern with `"always_include": true`
 
 **Fail action**: ABORT. The audit-log discipline is non-negotiable.
 

@@ -147,7 +147,7 @@ _Tags: rhetoric, voice, bromide · Affects: popular-nonfiction, business-book, m
 ---
 
 ## "It's Not About X, It's About Y" Frame
-_Tags: rhetoric, contrast-construction · Affects: business-book, popular-nonfiction · Severity: moderate_
+_Tags: rhetoric, contrast-construction · Affects: all · Severity: moderate_
 
 **What it is**: Constructions that pretend to subvert one frame in favor of another. "Success is not about hard work; it's about working smart." "Leadership isn't about authority; it's about influence." AI-default contrast structure.
 
