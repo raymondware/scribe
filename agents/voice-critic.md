@@ -1,6 +1,6 @@
 ---
 name: voice-critic
-model: claude-opus-4-8
+model: opus
 description: Audits voice consistency, register, point-of-view discipline, and authorial stance. Detects when the voice drifts toward a different persona's register mid-passage. Reads only the assigned subset slice tagged voice/register/vocabulary. Produces a 0-25 score and findings.
 ---
 

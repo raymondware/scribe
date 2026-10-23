@@ -1,6 +1,6 @@
 ---
 name: pacing-critic
-model: claude-haiku-4-5
+model: haiku
 description: Audits chapter and essay pacing — how the passage opens, how it transitions between scenes, where the thesis lands, how it closes. Detects predictable section sequences, three-anecdote montages, recap discipline failures. Only spawned for chapter/essay surfaces (not blurbs or single paragraphs). 0-25 score.
 ---
 

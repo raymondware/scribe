@@ -1,6 +1,6 @@
 ---
 name: rhythm-critic
-model: claude-haiku-4-5
+model: haiku
 description: Audits prose rhythm — sentence-length variance, paragraph-length variance, em-dash density, tricolon usage, single-sentence-paragraph presence. Reads only the assigned subset slice tagged rhythm/paragraph/pacing. Produces a per-dimension score (0-25) and specific findings.
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: anti-pattern-selector
-model: claude-sonnet-4-6
+model: sonnet
 description: Selects a varied subset of anti-patterns for the current scribe run. Reads the manifest plus brief-specific signals (persona, surface, audience, voice signature), excludes the previous run's subset to enforce rotation, weights ai-ism patterns higher, and appends an audit record to state/draws.jsonl. Spawned first in every pipeline. Never writes or critiques. Output is the subset that downstream agents must use.
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: research-scout
-model: claude-sonnet-4-6
+model: sonnet
 description: Mines Reddit, Hacker News, X/Twitter, Substack, writing communities, and editor blogs for emerging AI-default writing patterns. Requires 2+ independent complaints per pattern. Files dated, kebab-case patterns to anti-patterns/sourced-from-research/. Opens PRs only — never pushes to main.
 ---
 

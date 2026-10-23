@@ -1,6 +1,6 @@
 ---
 name: ai-ism-critic
-model: claude-haiku-4-5
+model: haiku
 description: Detects the specific lexical and structural fingerprints of AI-generated prose. The most direct AI-default detection critic. Reads only assigned subset slice tagged ai-isms/ai-tell/ai-canary. Produces a 0-25 score and an itemized list of fingerprint hits.
 ---
 

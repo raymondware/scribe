@@ -24,12 +24,12 @@ scribe/
 - Anti-patterns at repo root (not nested in skills/) because many agents read them
 - Specialists use Haiku (fast, cheap, constrained output)
 - Implementation agents use Sonnet (code generation)
-- Conductor, voice-critic, and critique-synthesizer use Opus 4.8 (complex judgment, synthesis)
+- Conductor, voice-critic, and critique-synthesizer use Opus (complex judgment, synthesis)
 - Conductor never writes or critiques - only coordinates
 
 ## Adding a New Agent
 
-1. Create `agents/your-agent.md` with YAML frontmatter (name, model, description)
+1. Create `agents/your-agent.md` with YAML frontmatter (name, model, description). Set `model` to a tier alias (`haiku`, `sonnet`, `opus`), never a pinned model ID
 2. Reference files using `${CLAUDE_PLUGIN_ROOT}/path/to/file`
 3. Define clear inputs, outputs, and constraints
 4. If the agent participates in the pipeline, update `skills/scribe/references/orchestration/pipeline.md`

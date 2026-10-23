@@ -1,6 +1,6 @@
 ---
 name: cross-persona-audit
-model: claude-sonnet-4-6
+model: sonnet
 description: Audits the 5 scribe persona definitions for structural divergence. Detects dimensions where two or more personas would produce indistinguishable prose. Flags overlap, produces a pairwise divergence matrix. Run when persona files are modified or when a new persona is added.
 ---
 

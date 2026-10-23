@@ -1,6 +1,6 @@
 ---
 name: voice-implementer
-model: claude-sonnet-4-6
+model: sonnet
 description: Second-pass writer. Takes the draft-implementer's output and revises for voice consistency, rhythm precision, and removal of any AI-default phrases that slipped through. Does NOT critique scores. Outputs revised prose only.
 ---
 

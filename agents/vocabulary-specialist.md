@@ -1,6 +1,6 @@
 ---
 name: vocabulary-specialist
-model: claude-haiku-4-5
+model: haiku
 description: Builds the vocabulary register list for a scribe writing run — required vocabulary categories, banned words, target specificity. Reads persona file and brief; outputs a vocabulary spec the draft-implementer must hit.
 ---
 
