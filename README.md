@@ -1,10 +1,38 @@
 # Scribe
 
-A Claude Code plugin that catches AI-default writing patterns before they ship.
+**Make AI-assisted drafts sound like you wrote them.**
 
-Scribe routes every draft through a persona system, picks a varied subset of anti-patterns per run (so two runs never produce the same critique), scores prose on a 0-100 sameness scale, and fixes voice, rhythm, vocabulary, structure, and rhetoric before the book goes to print.
+Scribe is a Claude Code plugin for authors, essayists, and editors. It finds the patterns readers recognize as AI prose and rewrites them in a voice that fits your book.
 
-Built for longform authors, essayists, ghostwriters, and editors. Runs a team of specialist agents that plan, draft, edit, and review collaboratively.
+```
+/plugin marketplace add raymondware/kern
+/plugin install scribe@raymondware
+/scribe:revise
+```
+
+Paste a passage after `/scribe:revise`. Scribe returns the rewrite, a diff, and a 0-100 sameness score.
+
+### Before
+
+> In today's fast-paced world, leadership isn't about authority; it's about influence. Great leaders don't just manage teams, but inspire them. By leveraging empathy, clarity, and vision, they unlock the full potential of their organizations. It's important to note that this is not a destination. It is a mindset.
+
+| Flagged | Pattern |
+|---|---|
+| "In today's fast-paced world" | `in-todays-fast-paced-world` |
+| "isn't about authority; it's about influence" | `negative-positive-restatement` |
+| "don't just manage teams, but inspire them" | `not-just-x-but-y-reflex` |
+| "empathy, clarity, and vision" | `tricolon-reflex` |
+| "leveraging", "unlock the full potential" | `marketing-verb` |
+| "It's important to note that" | `its-worth-noting-throat-clearing` |
+| "not a destination. It is a mindset." | `negative-positive-restatement` |
+
+### After
+
+<!-- Replace with real /scribe:revise output (business-book persona) and its score before publishing. -->
+
+> Teams follow the manager who listens before deciding. She asks what is blocking the work, says plainly which goal matters this quarter, and then lets people do it.
+
+**18 agents · 31 anti-patterns · 5 writer personas · a different critique subset every run**
 
 ## The Problem
 

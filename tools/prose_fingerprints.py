@@ -33,7 +33,17 @@ NEGATIVE_POSITIVE_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     (
         "not_just_but",
         re.compile(
-            r"\bnot\s+(?:just|only|merely)\b[^.!?;]{0,160}\bbut(?:\s+also)?\b[^.!?]{0,160}",
+            rf"(?:\bnot|n{_APOS}t)\s+(?:just|only|merely)\b[^.!?;]{{0,160}}\bbut(?:\s+also)?\b[^.!?]{{0,160}}",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        # "Great leaders don't just manage teams, they inspire them." Same move as
+        # "not just X, but Y" with the "but" dropped and a pronoun restarting the clause.
+        "dont_just_comma_claim",
+        re.compile(
+            rf"\b(?:do|does|did)n{_APOS}t\s+(?:just|only|merely)\s+\w+[^.!?;]{{0,120}}?"
+            r"[,;]\s*(?:they|we|you|it|he|she|i)\s+\w+[^.!?]{0,140}",
             re.IGNORECASE,
         ),
     ),
