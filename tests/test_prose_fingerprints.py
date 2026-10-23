@@ -31,6 +31,28 @@ class NegativePositiveRestatementTests(unittest.TestCase):
         findings = detect_negative_positive_restatement(text)
         self.assertTrue(any(item.kind == "not_just_but" for item in findings))
 
+    def test_detects_contracted_and_comma_spliced_frames(self):
+        cases = [
+            "It's not about speed, it's about impact.",
+            "It\u2019s not about speed, it\u2019s about impact.",
+            "Leadership isn't about authority; it's about influence.",
+            "Success is not about hard work, it's about working smart.",
+            "It isn't a tool, it's a mindset.",
+            "This was never about money. It was about respect.",
+            "We don't need more speed. We need impact.",
+        ]
+        for text in cases:
+            with self.subTest(text=text):
+                self.assertTrue(detect_negative_positive_restatement(text))
+
+    def test_allows_plain_negation_followed_by_instruction(self):
+        text = "This is not the default. Set the flag in config.toml to enable it."
+        self.assertEqual(detect_negative_positive_restatement(text), [])
+
+    def test_allows_negation_with_consequence(self):
+        text = "The cache is not warm on first boot, so the first request is slower."
+        self.assertEqual(detect_negative_positive_restatement(text), [])
+
     def test_allows_specific_contrast_without_immediate_positive_restating(self):
         text = "The job did not finish because the database was unavailable. The retry queue preserved the failed work item."
         self.assertEqual(detect_negative_positive_restatement(text), [])

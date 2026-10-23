@@ -201,6 +201,9 @@ def validate_negative_positive_detector() -> None:
         "This is not a productivity trick. It is a new operating model for teams.",
         "The goal is not about replacing judgment. The goal is about putting judgment in the right place.",
         "It is not just a checklist, but a complete operating model.",
+        "It's not about speed, it's about impact.",
+        "Leadership isn't about authority; it's about influence.",
+        "We don't need more speed. We need impact.",
     ]
     for case in positive_cases:
         findings = module.detect_negative_positive_restatement(case)
