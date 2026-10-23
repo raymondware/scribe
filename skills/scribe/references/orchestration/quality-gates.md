@@ -38,8 +38,9 @@ The conductor enforces these gates between phases. Failing a gate either aborts 
 - voice-implementer returned a draft within ±10% of structure-specialist's target word count
 - Draft contains no banned vocabulary (the persona's banned list — sanity check; the specialists should have caught this)
 - Draft does not start with any forbidden opener from the persona file
+- `python3 ${CLAUDE_PLUGIN_ROOT}/tools/prose_fingerprints.py <draft-file>` prints no findings (negative parallelism: "It's not X, it's Y", "not just X, but Y", "We don't need X. We need Y")
 
-**Fail action**: Re-run voice-implementer with explicit findings. If second attempt fails the same way, escalate.
+**Fail action**: Re-run voice-implementer with explicit findings. For detector hits, pass the printed lines as the findings. If second attempt fails the same way, escalate.
 
 ## REVIEW → PRESENT gate
 
