@@ -10,6 +10,7 @@ The conductor enforces these gates between phases. Failing a gate either aborts 
 - The subset contains at least 2 patterns of severity `critical` (`delve-tapestry-realm`, `uniform-paragraph-length`, `chapter-end-summary`, `in-todays-fast-paced-world`, `conclusion-restating-conclusion`)
 - The subset spans at least 2 of the 3 base source files (`language.md`, `structure.md`, `rhetoric.md`)
 - The subset does NOT match the previous run's subset
+- The subset contains every manifest pattern with `"always_include": true`
 
 **Fail action**: ABORT. The audit-log discipline is non-negotiable.
 
@@ -37,8 +38,9 @@ The conductor enforces these gates between phases. Failing a gate either aborts 
 - voice-implementer returned a draft within ±10% of structure-specialist's target word count
 - Draft contains no banned vocabulary (the persona's banned list — sanity check; the specialists should have caught this)
 - Draft does not start with any forbidden opener from the persona file
+- `python3 ${CLAUDE_PLUGIN_ROOT}/tools/prose_fingerprints.py <draft-file>` prints no findings (negative parallelism: "It's not X, it's Y", "not just X, but Y", "We don't need X. We need Y")
 
-**Fail action**: Re-run voice-implementer with explicit findings. If second attempt fails the same way, escalate.
+**Fail action**: Re-run voice-implementer with explicit findings. For detector hits, pass the printed lines as the findings. If second attempt fails the same way, escalate.
 
 ## REVIEW → PRESENT gate
 

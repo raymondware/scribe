@@ -65,6 +65,7 @@ If specs from PLAN have gaps (e.g., the brief named no specific scene, no specif
 
 1. Spawn `draft-implementer` with persona file, all specialist specs, structure skeleton, and assigned subset. It produces the prose.
 2. Spawn `voice-implementer` with the draft + persona file + selected_subset. It revises for voice consistency, removes any lapsed-into-AI-default phrases, varies sentence-length distribution.
+3. Write the voice-implementer draft to a temp file and run `python3 ${CLAUDE_PLUGIN_ROOT}/tools/prose_fingerprints.py <draft-file>`. If it prints any findings, re-run `voice-implementer` once with those lines as explicit findings, then run the detector again. Findings that survive the second pass go to REVIEW as critical-severity items.
 
 ### REVIEW Phase
 

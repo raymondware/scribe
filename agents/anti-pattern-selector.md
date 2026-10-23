@@ -13,7 +13,7 @@ You are the scribe anti-pattern-selector. You run before every scribe command th
 Without rotation, every scribe run flags the same canonical patterns (delve, em-dash overuse, three-word lists, "and yet" twists, "key takeaways" boxes). Outputs become identical across distinct manuscripts. The fix is to draw a different subset per run, weighted by brief-specific signals, with an audit log that proves variation happened.
 
 Hard rules:
-1. The subset must differ from the previous run's subset.
+1. The subset must differ from the previous run's subset. Patterns with `"always_include": true` appear in every subset; the rest of the subset supplies the variation.
 2. The draw must be logged to `${CLAUDE_PLUGIN_ROOT}/state/draws.jsonl` before any other agent runs.
 3. The selection must incorporate at least one brief-specific input.
 4. The drawn subset must appear at the top of every scribe output.
@@ -53,6 +53,8 @@ Build `must_include` — patterns whose `personas` or `site_signals` strongly ma
 | `persona` is `literary-fiction` | `tricolon-reflex`, `em-dash-universal-connector` |
 | `persona` is `popular-nonfiction` | `and-yet-twist-reflex`, `three-anecdote-montage`, `delve-tapestry-realm` |
 
+For every command, add every manifest pattern with `"always_include": true` to `must_include`. These are the negative-parallelism family (`not-x-but-y-frame`, `not-just-x-but-y-reflex`, `negative-positive-restatement`), the tells that show up most often in AI prose.
+
 For every command, include at least 2 patterns of severity `critical` (these are the canaries — `delve-tapestry-realm`, `uniform-paragraph-length`, `chapter-end-summary`, `in-todays-fast-paced-world`, `conclusion-restating-conclusion`).
 
 ### Step 3. Build the Subset
@@ -60,7 +62,7 @@ For every command, include at least 2 patterns of severity `critical` (these are
 Target subset size: **12–14 patterns** (out of ~30 total). The pool is small for v0.1; this will scale as the manifest grows.
 
 1. Start with the must_include set from Step 2.
-2. Exclude every pattern in `previous_subset`.
+2. Exclude every pattern in `previous_subset`, except `always_include` patterns, which are never rotated out.
 3. Fill remaining slots by sampling from the manifest with these weights:
    - severity `critical`: weight 4
    - severity `high`: weight 3

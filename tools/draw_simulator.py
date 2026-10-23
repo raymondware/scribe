@@ -70,6 +70,7 @@ class Pattern:
     anchor: str
     personas: list[str]
     site_signals: list[str]
+    always_include: bool = False
 
 
 @dataclass
@@ -110,6 +111,7 @@ def load_manifest(path: Path = MANIFEST_PATH) -> list[Pattern]:
             anchor=p["anchor"],
             personas=p["personas"],
             site_signals=p["site_signals"],
+            always_include=p.get("always_include", False),
         )
         for p in data["patterns"]
     ]
@@ -212,7 +214,10 @@ def select_subset(
     seed_int = int(hashlib.sha256(run_id.encode()).hexdigest(), 16)
     target_size = 8 + (seed_int % 7)
 
-    forced_full = must_include_set(patterns, inputs)
+    # Always-on patterns are the highest-frequency AI tells. Rotating them out would
+    # let them back into every other draft, so they skip the rotation rule entirely.
+    always_on = [p.id for p in patterns if p.always_include]
+    forced_full = [pid for pid in must_include_set(patterns, inputs) if pid not in always_on]
     forced_kept: list[str] = []
     rotation_excluded: list[str] = []
 
@@ -222,7 +227,7 @@ def select_subset(
             continue
         forced_kept.append(pid)
 
-    forced_kept = forced_kept[: max(1, target_size // 2)]
+    forced_kept = always_on + forced_kept[: max(1, target_size // 2)]
 
     rng = random.Random(seed_int)
     weights: dict[str, float] = {}

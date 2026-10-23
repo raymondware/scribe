@@ -116,8 +116,9 @@
       "severity_default": "moderate",
       "source_file": "anti-patterns/language.md",
       "anchor": "its-not-about-x-its-about-y-frame",
-      "personas": ["business-book", "popular-nonfiction"],
-      "site_signals": ["any"]
+      "personas": ["all"],
+      "site_signals": ["any"],
+      "always_include": true
     },
     {
       "id": "filler-intensifiers",
@@ -139,7 +140,8 @@
       "source_file": "anti-patterns/language.md",
       "anchor": "not-just-x-but-also-y-reflex",
       "personas": ["all"],
-      "site_signals": ["any"]
+      "site_signals": ["any"],
+      "always_include": true
     },
     {
       "id": "negative-positive-restatement",
@@ -150,7 +152,8 @@
       "source_file": "anti-patterns/language.md",
       "anchor": "negativepositive-restatement",
       "personas": ["all"],
-      "site_signals": ["any", "chapter", "essay", "conclusion"]
+      "site_signals": ["any", "chapter", "essay", "conclusion"],
+      "always_include": true
     },
     {
       "id": "flashlight-hedging-adjectives",

@@ -34,6 +34,7 @@ You are the first writer. You produce the first draft of the requested passage b
 - Do not start the passage with any forbidden opener listed in the persona file.
 - Do not exceed the em-dash budget from the rhythm-spec.
 - Do not produce three-word lists (tricolons) unless the rhythm-spec explicitly allows them in this run.
+- Do not set up a claim by negating a straw version of it ("It's not about speed, it's about impact," "not just X, but Y"). State the positive claim directly.
 - Do not produce paragraphs of uniform length. Hit the standard-deviation target.
 - Do not include "key takeaways," "in conclusion," "as we have seen," or any other recap phrase from selected_subset.
 - Do not produce negative/positive restatement: avoid "not X, but Y," "This is not X. It is Y," and "The goal is not X. The goal is Y" unless the contrast is specific and necessary.

@@ -18,6 +18,17 @@ class Finding:
     excerpt: str
 
 
+# Building blocks shared by the restatement patterns. Contractions are matched with
+# both straight and curly apostrophes because drafts arrive in either form.
+_APOS = r"['’]"
+_NEG_SUBJECT = r"\b(?:it|this|that|the\s+\w+|\w+(?:\s+\w+){0,2})"
+_POS_SUBJECT = r"(?:it|this|that|they|the\s+\w+(?:\s+\w+)?)"
+_NEG_BE = (
+    rf"(?:\s+(?:is|was|are|were)\s+(?:not|never)|{_APOS}s\s+(?:not|never)"
+    rf"|\s+(?:is|was|are|were)n{_APOS}t)"
+)
+_POS_BE = rf"(?:\s+(?:is|was|are|were)|{_APOS}s|{_APOS}re)"
+
 NEGATIVE_POSITIVE_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     (
         "not_just_but",
@@ -29,16 +40,26 @@ NEGATIVE_POSITIVE_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     (
         "not_about_about",
         re.compile(
-            r"\b(?:it|this|that|the\s+goal|the\s+point)\s+(?:is|'s)\s+not\s+about\b[^.!?]{0,140}"
-            r"[.!?;,]\s*(?:it|this|that|the\s+goal|the\s+point)\s+(?:is|'s)\s+about\b[^.!?]{0,140}",
+            rf"{_NEG_SUBJECT}{_NEG_BE}\s+about\b[^.!?]{{0,140}}?"
+            rf"[.!?;,]\s*{_POS_SUBJECT}{_POS_BE}\s+(?:all\s+|really\s+)?about\b[^.!?]{{0,140}}",
             re.IGNORECASE,
         ),
     ),
     (
         "not_x_it_is_y",
         re.compile(
-            r"\b(?:it|this|that|the\s+goal|the\s+point|the\s+work|the\s+system)\s+(?:is|'s)\s+not\b[^.!?]{3,140}"
-            r"[.!?;]\s*(?:it|this|that|the\s+goal|the\s+point|the\s+work|the\s+system)\s+(?:is|'s)\b[^.!?]{3,140}",
+            rf"\b(?:it|this|that|the\s+goal|the\s+point|the\s+work|the\s+system){_NEG_BE}\b[^.!?]{{3,140}}?"
+            rf"[.!?;,]\s*(?:it|this|that|the\s+goal|the\s+point|the\s+work|the\s+system){_POS_BE}\b[^.!?]{{3,140}}",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        # "We don't need X. We need Y." The backreferences require the same subject and
+        # verb on both sides, which keeps ordinary negative sentences out.
+        "not_do_x_do_y",
+        re.compile(
+            rf"\b(we|you|they|i)\s+(?:don{_APOS}t|do\s+not|didn{_APOS}t|did\s+not)\s+(\w+)\b[^.!?]{{0,120}}?"
+            r"[.!?;,]\s*\1\s+\2\b[^.!?]{0,140}",
             re.IGNORECASE,
         ),
     ),

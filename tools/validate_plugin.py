@@ -124,6 +124,8 @@ def validate_antipattern_manifest() -> None:
             fail(f"pattern id is not kebab-case: {pid}")
         if pid in seen:
             fail(f"duplicate pattern id {pid}")
+        if not isinstance(pattern.get("always_include", False), bool):
+            fail(f"pattern {pid} always_include must be a boolean")
         seen.add(pid)
         source = ROOT / pattern["source_file"]
         if not source.exists():
@@ -186,6 +188,12 @@ def validate_draw_rotation() -> None:
             fail("draw simulator reused the same subset twice")
         if not 8 <= lines[0]["subset_size"] <= 14 or not 8 <= lines[1]["subset_size"] <= 14:
             fail("draw simulator subset size outside expected range")
+        manifest = read_json(ROOT / "anti-patterns" / "manifest.json")
+        always_on = {p["id"] for p in manifest["patterns"] if p.get("always_include")}
+        for line in lines:
+            missing = always_on - set(line["subset"])
+            if missing:
+                fail(f"draw {line['run_id']} dropped always_include patterns: {sorted(missing)}")
 
 
 def validate_negative_positive_detector() -> None:
@@ -201,6 +209,9 @@ def validate_negative_positive_detector() -> None:
         "This is not a productivity trick. It is a new operating model for teams.",
         "The goal is not about replacing judgment. The goal is about putting judgment in the right place.",
         "It is not just a checklist, but a complete operating model.",
+        "It's not about speed, it's about impact.",
+        "Leadership isn't about authority; it's about influence.",
+        "We don't need more speed. We need impact.",
     ]
     for case in positive_cases:
         findings = module.detect_negative_positive_restatement(case)
