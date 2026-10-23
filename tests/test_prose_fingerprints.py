@@ -40,6 +40,9 @@ class NegativePositiveRestatementTests(unittest.TestCase):
             "It isn't a tool, it's a mindset.",
             "This was never about money. It was about respect.",
             "We don't need more speed. We need impact.",
+            "Great leaders don't just manage teams, but inspire them.",
+            "Great leaders don\u2019t just manage teams, they inspire them.",
+            "The tool doesn't only format code; it rewrites it.",
         ]
         for text in cases:
             with self.subTest(text=text):
