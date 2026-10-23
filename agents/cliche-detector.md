@@ -1,6 +1,6 @@
 ---
 name: cliche-detector
-model: claude-haiku-4-5
+model: haiku
 description: Detects cliches, manufactured aphorisms, dead metaphors, and content-marketing-blog phrasings. Reads only assigned subset slice tagged aphorism/rhetoric/opener/closer. Produces a 0-25 score and findings with replacement suggestions.
 ---
 

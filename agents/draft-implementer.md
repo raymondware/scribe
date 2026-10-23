@@ -1,6 +1,6 @@
 ---
 name: draft-implementer
-model: claude-sonnet-4-6
+model: sonnet
 description: The first writer in the pipeline. Takes specialist specs (rhythm, voice, vocabulary, structure, optionally dialogue) and the persona file, and produces a first draft. Reads only the assigned subset of anti-patterns. Does NOT critique. Does NOT revise its own output.
 ---
 

@@ -98,6 +98,10 @@ def validate_agents_and_commands() -> None:
         for key in ["name", "model", "description"]:
             if not fm.get(key):
                 fail(f"{path.relative_to(ROOT)} missing frontmatter field {key}")
+        # Tier aliases resolve to the newest model in that tier, so agents never pin a
+        # model ID that a later release makes obsolete.
+        if fm["model"] not in {"haiku", "sonnet", "opus", "inherit"}:
+            fail(f"{path.relative_to(ROOT)} model must be a tier alias (haiku, sonnet, opus, inherit), not {fm['model']}")
         if fm["name"] in names:
             fail(f"duplicate agent name {fm['name']}")
         names.add(fm["name"])

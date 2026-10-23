@@ -1,6 +1,6 @@
 ---
 name: structure-specialist
-model: claude-haiku-4-5
+model: haiku
 description: Plans the macro-structure of the passage — paragraph order, section breaks, how the surface opens and closes. Reads the rhythm/voice/vocabulary specialists' outputs and the persona file. Outputs a paragraph-by-paragraph skeleton the draft-implementer fills in.
 ---
 

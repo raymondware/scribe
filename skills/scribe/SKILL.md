@@ -75,9 +75,9 @@ The `anti-pattern-selector` agent enforces all four. Runs first in every command
 
 | Agent | Model | Role |
 |---|---|---|
-| `conductor` | Opus 4.8 | Pipeline orchestrator. Manages state, spawns specialists, enforces quality gates. |
+| `conductor` | Opus | Pipeline orchestrator. Manages state, spawns specialists, enforces quality gates. |
 | `anti-pattern-selector` | Sonnet | Picks the varied subset for this run, writes the audit log. Runs first in every pipeline. |
-| `critique-synthesizer` | Opus 4.8 | Merges parallel critic outputs, deduplicates, computes consensus 0-100 Sameness Score. |
+| `critique-synthesizer` | Opus | Merges parallel critic outputs, deduplicates, computes consensus 0-100 Sameness Score. |
 
 ### Planning Specialists (read-only, produce specs)
 
@@ -101,7 +101,7 @@ The `anti-pattern-selector` agent enforces all four. Runs first in every command
 | Agent | Model | Role |
 |---|---|---|
 | `rhythm-critic` | Haiku | Sentence/paragraph variance, em-dash density, tricolons. 0-25 |
-| `voice-critic` | Opus 4.8 | Voice consistency, vocabulary register, marketing-verb detection. 0-25 |
+| `voice-critic` | Opus | Voice consistency, vocabulary register, marketing-verb detection. 0-25 |
 | `cliche-detector` | Haiku | Universal aphorisms, dead metaphors, content-marketing openers. 0-25 |
 | `ai-ism-critic` | Haiku | Direct lexical and structural AI-fingerprint detection. 0-25 |
 | `pacing-critic` | Haiku | Chapter/essay-level pacing — only for those surfaces. 0-25 |

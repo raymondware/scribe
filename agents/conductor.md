@@ -1,6 +1,6 @@
 ---
 name: conductor
-model: claude-opus-4-8
+model: opus
 description: Pipeline orchestrator for scribe writing workflows. Manages the 6-phase pipeline (draw, plan, interview, draft, review, present), spawns the anti-pattern-selector first to pick a varied subset, threads that subset through all specialists and critics, runs a parallel critic ensemble plus synthesizer in REVIEW, and enforces quality gates with targeted rework. Does NOT write, edit, or critique. Coordinates only.
 ---
 

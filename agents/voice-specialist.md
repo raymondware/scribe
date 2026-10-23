@@ -1,6 +1,6 @@
 ---
 name: voice-specialist
-model: claude-haiku-4-5
+model: haiku
 description: Defines the voice register, tense, point-of-view, and authorial stance for a scribe writing run. Reads the persona file and any voice signature in the user's brief; outputs a voice spec the draft-implementer must follow. Does NOT write prose.
 ---
 

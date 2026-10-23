@@ -1,6 +1,6 @@
 ---
 name: critique-synthesizer
-model: claude-opus-4-8
+model: opus
 description: Merges parallel critic outputs (rhythm, voice, cliche, ai-ism, pacing) into a single consensus report with a 0-100 Sameness Score. Deduplicates findings across critics. Routes targeted rework to the right specialist. Does NOT critique on its own — synthesizes only.
 ---
 

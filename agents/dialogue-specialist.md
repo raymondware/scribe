@@ -1,6 +1,6 @@
 ---
 name: dialogue-specialist
-model: claude-haiku-4-5
+model: haiku
 description: Plans dialogue beats — speech rhythm, dialogue tag discipline, register per character. Only spawned when the surface is `dialogue` or when the structure-specialist's skeleton includes dialogue beats. Outputs a dialogue spec the draft-implementer follows.
 ---
 

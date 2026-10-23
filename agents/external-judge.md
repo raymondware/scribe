@@ -1,6 +1,6 @@
 ---
 name: external-judge
-model: claude-sonnet-4-6
+model: sonnet
 description: Independent Sameness scorer for prose. Reads prose only — no access to specialists' outputs, the synthesizer's findings, or the critic ensemble's reasoning. Used when an external validation harness needs an unbiased second opinion. Outputs JSON with score and indicators_hit.
 ---
 

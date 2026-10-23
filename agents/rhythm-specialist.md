@@ -1,6 +1,6 @@
 ---
 name: rhythm-specialist
-model: claude-haiku-4-5
+model: haiku
 description: Defines the sentence-length distribution, paragraph rhythm, and pacing targets for a scribe writing run. Reads the persona file and the user's brief; outputs a rhythm spec the draft-implementer must hit. Does NOT write prose. Does NOT read outside the assigned subset.
 ---
 
