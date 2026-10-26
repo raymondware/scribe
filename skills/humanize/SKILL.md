@@ -36,12 +36,15 @@ Look for a mismatch between what a passage says and how it says it. Start with p
 | Spends several sentences announcing an ordinary point | Bring the actual point forward and remove redundant setup | Keep context the reader needs to understand it |
 | Makes a claim sound larger than the supplied evidence | Remove the promotional or grand wording | Keep the claim's scope and any supported consequence |
 | Uses abstraction where the source already gives an action | Use the supplied actor and action | If the actor is unknown, passive voice can be accurate |
+| Packs actions and conditions into shorthand | Restore complete clauses and the connections the text supplies | Keep identifiers exact; do not assume an unexplained symbol establishes cause or order |
 | Repeats the same rhetorical move across paragraphs | Rebuild the affected passage around its sequence of ideas | Repetition can also carry character, emphasis, or a technical distinction |
 | Replaces individual voice with generic smoothness | Restore the writer's recognizable choices | Do not invent personality, experience, or conviction |
 
 For Scribe's named patterns, consult `${CLAUDE_PLUGIN_ROOT}/anti-patterns/manifest.json` and only the relevant sections of its source files. Use that library as a set of diagnostic clues, not a requirement to find or change a certain number of patterns. In this skill, a reader-specific reason for an edit takes precedence over a library's blanket substitution or numerical target.
 
 A familiar word, a three-item list, a semicolon, or an evenly paced paragraph can be exactly right. Keep domain terms and consistent names for the same thing. Do not cycle synonyms, delete every adverb, impose sentence-length quotas, or convert useful lists into prose just to vary the surface.
+
+For a clarity edit, or a passage explaining something unfamiliar to its audience, read `${CLAUDE_PLUGIN_ROOT}/skills/scribe/references/reader-clarity.md`. A few extra words can make a compressed sentence easier to follow. Keep deliberate ambiguity and character speech when they belong to the work.
 
 ## Make the edit earn its place
 

@@ -42,7 +42,7 @@ def validate_plugin_manifests() -> None:
 
     if plugin.get("name") != "scribe":
         fail("plugin.json name must be scribe")
-    if plugin.get("version") != "1.1.0":
+    if plugin.get("version") != "1.1.1":
         fail("plugin.json version must stay aligned with release docs")
     if plugin.get("license") != "MIT":
         fail("plugin.json license must be MIT")

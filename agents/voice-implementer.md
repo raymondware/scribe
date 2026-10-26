@@ -47,6 +47,10 @@ Confirm at least one short paragraph (1-2 sentences) per page. Confirm no run of
 
 Read the whole passage end-to-end. Does it sound like one person wrote it? If parts drift toward a different register, pull them back. Does it sound like the persona's exemplars? Adjust until it does.
 
+### Pass 6: Reader understanding (explanatory prose)
+
+For passages that explain a real subject, or when the brief requests a clarity check, read `${CLAUDE_PLUGIN_ROOT}/skills/scribe/references/reader-clarity.md`. Repair shorthand and missing connections using the supplied material. Keep the existing meaning, word-count limits, and paragraph order. Preserve complete reasoning when adjusting cadence to a rhythm target. This is an editing check, not another critic round; keep the prose-only output.
+
 ## Hard Rules
 
 - Do not change the meaning of any paragraph. You are revising for voice and rhythm, not content.

@@ -1,10 +1,10 @@
 ---
 name: scribe
-version: 1.1.0
+version: 1.1.1
 description: Multi-agent writing harness for longform authors. Catches AI-default writing patterns (delve, tapestry, em-dash overuse, hedging openers, three-word lists, negative/positive restatement, conclusion-restating) before they ship. Five writer personas (literary fiction, popular nonfiction, technical writing, memoir, business book), persona-specific rhythm and voice rules, anti-pattern rotation per run with audit log, multi-critic synthesis. Built for authors, essayists, ghostwriters, and editors.
 ---
 
-# Scribe v1.1.0
+# Scribe v1.1.1
 
 Multi-agent writing harness for authors who care about voice.
 
@@ -181,6 +181,7 @@ Append-only audit log lives at `${CLAUDE_PLUGIN_ROOT}/state/draws.jsonl`. Every 
 |---|---|
 | `${CLAUDE_PLUGIN_ROOT}/skills/scribe/references/exemplars.md` | Author/book exemplars per persona |
 | `${CLAUDE_PLUGIN_ROOT}/skills/scribe/references/rhythm-tokens.md` | Cross-persona rhythm targets and vocabulary |
+| `${CLAUDE_PLUGIN_ROOT}/skills/scribe/references/reader-clarity.md` | Clarity checks for compressed and explanatory prose |
 | `${CLAUDE_PLUGIN_ROOT}/skills/scribe/references/orchestration/pipeline.md` | Pipeline state machine |
 | `${CLAUDE_PLUGIN_ROOT}/skills/scribe/references/orchestration/quality-gates.md` | Gate criteria |
 

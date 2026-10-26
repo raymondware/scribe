@@ -86,6 +86,34 @@ Possible edit:
 
 The setting, link destination, ordering, and restart requirement stay intact. In a file, frontmatter, code samples, and template expressions would also stay intact. A list of actual setup steps should remain a list.
 
+## Unpack a production note
+
+Request: Make this note easier to follow.
+
+Before:
+
+> Chapter-template replacement removed page numbers; footer restore required before proof export.
+
+After:
+
+> Replacing the chapter template removed the page numbers. Restore the footer before exporting the proof.
+
+The edit gives the second clause a verb and makes the sequence readable. The template change, missing page numbers, and required order stay the same. No extra production step is added.
+
+## Explain a supplied term for a new audience
+
+Request: Make this explanation accessible to a general reader. Here, albedo means the fraction of sunlight a surface reflects.
+
+Before:
+
+> Ice loss lowers albedo. The surface absorbs more sunlight as a result.
+
+After:
+
+> Ice loss reduces albedo, the fraction of sunlight a surface reflects. The surface then absorbs more sunlight.
+
+The writer supplied the definition, and the passage already stated the relationship. The edit places that information together while keeping the technical term. An explanation for specialists might need no definition.
+
 ## Community influences
 
 The skill's workflow, wording, and examples are original to Scribe. These community projects informed the design:
