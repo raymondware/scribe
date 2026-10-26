@@ -11,7 +11,7 @@ scribe/
 ├── .claude-plugin/     # Plugin manifest (plugin.json, marketplace.json)
 ├── agents/             # Flat directory, auto-discovered by Claude Code
 ├── commands/           # /scribe:* slash commands
-├── skills/scribe/      # SKILL.md + reference files
+├── skills/             # Scribe pipeline and focused humanize skill
 ├── anti-patterns/      # Base + research-sourced AI-ism library
 ├── state/              # Append-only audit log (state/draws.jsonl)
 └── tools/              # Draw simulator and validators
@@ -26,6 +26,10 @@ scribe/
 - Implementation agents use Sonnet (code generation)
 - Conductor, voice-critic, and critique-synthesizer use Opus (complex judgment, synthesis)
 - Conductor never writes or critiques - only coordinates
+
+## Focused Humanize Skill
+
+`${CLAUDE_PLUGIN_ROOT}/skills/humanize/SKILL.md` provides `/scribe:humanize` for direct edits of existing prose. It runs in the current conversation without the conductor, pattern draw, audit log, or Sameness Score. Keep this separate from the existing pipeline commands. Use the writer's voice and preserve claims instead of enforcing blanket pattern substitutions.
 
 ## Adding a New Agent
 

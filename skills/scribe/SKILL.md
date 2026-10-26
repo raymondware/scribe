@@ -1,12 +1,14 @@
 ---
 name: scribe
-version: 1.0.0
+version: 1.1.0
 description: Multi-agent writing harness for longform authors. Catches AI-default writing patterns (delve, tapestry, em-dash overuse, hedging openers, three-word lists, negative/positive restatement, conclusion-restating) before they ship. Five writer personas (literary fiction, popular nonfiction, technical writing, memoir, business book), persona-specific rhythm and voice rules, anti-pattern rotation per run with audit log, multi-critic synthesis. Built for authors, essayists, ghostwriters, and editors.
 ---
 
-# Scribe v1.0.0
+# Scribe v1.1.0
 
 Multi-agent writing harness for authors who care about voice.
+
+For a focused humanizing pass on existing prose, use `${CLAUDE_PLUGIN_ROOT}/skills/humanize/SKILL.md` (`/scribe:humanize`). That skill edits directly without the pipeline, a draw, an audit log entry, or a Sameness Score. Explicit requests for the pipeline commands below retain their existing behavior.
 
 ## Quick Start (5 minutes)
 
@@ -67,7 +69,7 @@ Hard rule:
 3. Audit trail. Every draw appended to `state/draws.jsonl` and printed at the top of every output.
 4. Brief-specific signal must influence selection.
 
-The `anti-pattern-selector` agent enforces all four. Runs first in every command.
+The `anti-pattern-selector` agent enforces all four. It runs first in every pipeline command. The standalone `/scribe:humanize` skill works outside this pipeline and its draw rules.
 
 ## Agent Team
 
@@ -157,6 +159,7 @@ Gate threshold: **40** for scribe-produced output, **60** for `/scribe:audit` on
 
 | Command | Does |
 |---|---|
+| `/scribe:humanize <text or path>` | Focused edit preserving voice and meaning; returns the passage without pipeline scoring |
 | `/scribe:write <desc>` | Full 6-phase pipeline via conductor |
 | `/scribe:plan <desc>` | Plan phase only (specs, no draft) |
 | `/scribe:audit` | DRAW + parallel critic ensemble + synthesizer (no rewrite) |
@@ -170,7 +173,7 @@ Gate threshold: **40** for scribe-produced output, **60** for `/scribe:audit` on
 
 ## State
 
-Append-only audit log lives at `${CLAUDE_PLUGIN_ROOT}/state/draws.jsonl`. Every scribe run appends one record before any other agent runs. See `${CLAUDE_PLUGIN_ROOT}/state/README.md` for the schema.
+Append-only audit log lives at `${CLAUDE_PLUGIN_ROOT}/state/draws.jsonl`. Every pipeline run appends one record before any other agent runs. The standalone humanize skill does not use this log. See `${CLAUDE_PLUGIN_ROOT}/state/README.md` for the schema.
 
 ## Reference Files
 
