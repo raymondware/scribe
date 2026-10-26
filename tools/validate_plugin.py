@@ -42,7 +42,7 @@ def validate_plugin_manifests() -> None:
 
     if plugin.get("name") != "scribe":
         fail("plugin.json name must be scribe")
-    if plugin.get("version") != "1.0.0":
+    if plugin.get("version") != "1.1.0":
         fail("plugin.json version must stay aligned with release docs")
     if plugin.get("license") != "MIT":
         fail("plugin.json license must be MIT")
@@ -145,6 +145,23 @@ def validate_antipattern_manifest() -> None:
             fail(f"pattern {pid} anchor {anchor} not found in {pattern['source_file']}")
 
 
+def validate_skills() -> None:
+    skills = sorted((ROOT / "skills").glob("*/SKILL.md"))
+    if not skills:
+        fail("expected at least one Scribe skill")
+
+    command_names = {path.stem for path in (ROOT / "commands").glob("*.md")}
+    for path in skills:
+        fm = frontmatter(path)
+        name = fm.get("name", "")
+        if name != path.parent.name or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", name):
+            fail(f"{path.relative_to(ROOT)} name must match its kebab-case folder")
+        if not fm.get("description"):
+            fail(f"{path.relative_to(ROOT)} missing skill description")
+        if name in command_names:
+            fail(f"skill {name} collides with commands/{name}.md")
+
+
 def validate_personas() -> None:
     persona_dir = ROOT / "skills" / "scribe" / "references" / "personas"
     expected = {
@@ -230,6 +247,7 @@ def validate_negative_positive_detector() -> None:
 def main() -> int:
     validate_plugin_manifests()
     validate_agents_and_commands()
+    validate_skills()
     validate_antipattern_manifest()
     validate_personas()
     validate_draw_rotation()

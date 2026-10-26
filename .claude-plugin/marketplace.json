@@ -4,20 +4,21 @@
     "name": "raymondware"
   },
   "metadata": {
-    "description": "AI-ism-resistant writing harness for longform authors",
-    "version": "1.0.0"
+    "description": "Voice-preserving prose editing and a longform writing harness",
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "scribe",
       "source": "./",
-      "description": "Multi-agent writing harness that catches AI-default writing patterns before they ship. Five writer personas, parallel critic ensemble, 0-100 sameness score. Built for longform authors, essayists, and editors.",
-      "version": "1.0.0",
+      "description": "Focused humanize editing plus a multi-agent longform harness. Preserves voice and meaning in existing prose, with five writer personas and parallel critics for pipeline workflows.",
+      "version": "1.1.0",
       "author": {
         "name": "raymondware"
       },
       "keywords": [
         "writing",
+        "humanize",
         "books",
         "ai-isms",
         "voice",

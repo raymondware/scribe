@@ -1,7 +1,7 @@
 {
   "name": "scribe",
-  "version": "1.0.0",
-  "description": "Multi-agent writing harness that catches AI-isms before they ship. For book writers, essayists, and longform authors who care about voice.",
+  "version": "1.1.0",
+  "description": "Focused humanize editing plus a multi-agent longform harness. Preserves voice and meaning in existing prose, with five writer personas and parallel critics for pipeline workflows.",
   "author": {
     "name": "raymondware"
   },
@@ -10,6 +10,7 @@
   "repository": "https://github.com/raymondware/scribe",
   "keywords": [
     "writing",
+    "humanize",
     "books",
     "ai-isms",
     "voice",

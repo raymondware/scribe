@@ -12,6 +12,8 @@ Scribe is a Claude Code plugin for authors, essayists, and editors. It finds the
 
 Paste a passage after `/scribe:revise`. Scribe returns the rewrite, a diff, and a 0-100 sameness score.
 
+For a focused edit, use `/scribe:humanize` with a passage or file path. It keeps your voice and meaning, removes stiffness where needed, and returns the edited passage. It runs directly without the agent pipeline, pattern draw, audit log, or score. Already-effective prose can stay unchanged.
+
 ### Before
 
 > In today's fast-paced world, leadership isn't about authority; it's about influence. Great leaders don't just manage teams, but inspire them. By leveraging empathy, clarity, and vision, they unlock the full potential of their organizations. It's important to note that this is not a destination. It is a mindset.
@@ -72,6 +74,7 @@ Restart Claude Code and the `/scribe:*` commands are available.
 
 | Command | Does |
 |---|---|
+| `/scribe:humanize <text or path>` | Edit existing prose for naturalness while preserving voice, facts, and useful structure |
 | `/scribe:write <desc>` | Full pipeline: persona detection, specialists, draft, review |
 | `/scribe:audit` | Anti-pattern scan with sameness score against existing prose |
 | `/scribe:revise` | Rewrite a passage against Scribe's standards, show diff |
@@ -99,7 +102,7 @@ Scribe picks a persona from your description, then loads that persona's rules fo
 
 ### 2. Variation Rule
 
-Every run picks a different subset of anti-patterns. Scribe reads the audit log (`state/draws.jsonl`) and excludes the previous run's subset. Two runs on the same prompt produce different critiques.
+Every pipeline run picks a different subset of anti-patterns. Scribe reads the audit log (`state/draws.jsonl`) and excludes the previous run's subset. Two runs on the same prompt produce different critiques. The focused `/scribe:humanize` skill works outside this pipeline.
 
 ### 3. Parallel Critics + Synthesizer
 
