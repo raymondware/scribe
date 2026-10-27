@@ -4,6 +4,8 @@ Scribe follows semantic versioning.
 
 ## Current
 
+v1.1.1 - Refines humanize and voice revision to unpack compressed prose and check reader understanding while preserving meaning and genre.
+
 v1.1.0 - Adds the focused `/scribe:humanize` skill, original editing examples, and skill packaging validation. Existing pipeline commands keep their behavior.
 
 v1.0.0 -- Initial public release. 5 personas, anti-pattern library, conductor + 11 agents wired.

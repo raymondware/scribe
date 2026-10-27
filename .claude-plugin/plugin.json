@@ -1,6 +1,6 @@
 {
   "name": "scribe",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Focused humanize editing plus a multi-agent longform harness. Preserves voice and meaning in existing prose, with five writer personas and parallel critics for pipeline workflows.",
   "author": {
     "name": "raymondware"
